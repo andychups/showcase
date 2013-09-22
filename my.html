@@ -1,0 +1,277 @@
+    <!doctype html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>HTML5 Video &ndash; @andychups</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/my.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>HTML5 Video</h1>
+                    <h3>@andychups</h3>
+                </section>
+
+                <section>
+                    <h2>[Скриншот старой главной][2]</h2>
+                </section>
+
+                <section>
+                    <h2>[Скриншот новой главной][3]</h2>
+                </section>
+
+                <section>
+                    <h2>[Скринкаст новой главной][4]</h2>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Варианты решения задачи</h2>
+                        <ol>
+                            <li>Flash</li>
+                            <li>Gif</li>
+                            <li>JPEG Sprite + CSS Animation</li>
+                            <li>HTML5 Video</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h3>JPEG Sprite + CSS Animation</h3>
+                        <code>
+                            setInterval(function() {
+
+                            });
+                        </code>
+                        + Анимация
+                    </section>
+                    <section>
+                        <h3>HTML5 Video</h3>
+                        Video vs. sprite
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Поддержка HTML5 Video</h2>
+                    <ul>
+                        <li>Firefox 3.5+</li>
+                        <li>Chrome 4.0+</li>
+                        <li>Opera 10.5+</li>
+                        <li>IE 9+</li>
+                        <li>Safari 4.0+</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Форматы</h2>
+                    <ul>
+                        <li><b>WebM</b> &ndash; Firefox 4.0+, Chrome 6.0+, Opera 10.6+</li>
+                        <li><b>MP4</b> &ndash; IE 9+, Safari 4.0+</li>
+                    </ul>
+                    <p class="b-top"><b>Конвертор</b> &ndash; FireOgg</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Скругление уголков</h2>
+                        [ Скругленные уголки и проблемы ][ 9 ]
+                    </section>
+
+                    <section>
+                        <h2>Скругление уголков: где работает?</h2>
+                        [ Где поддерживается ][ 10 ]
+                        Картина получилась такая: Firefox, Opera до 12.02, IE9 – скругляют, Chrome – не скругляет.
+                    </section>
+
+                    <section>
+                        <h2>Скругление уголков: canvas</h2>
+                        [ Canvas ][ 11 ]
+                    </section>
+
+                    <section>
+                        <h2>Скругление уголков: маска</h2>
+                        [ WebKit border-radius ][ 12 ]
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Отложенная загрузка</h2>
+                    [ Таблица с загрузкой видео + preload=none (ie9) ][ 13 ]
+                </section>
+
+                <section>
+                    <h2>Падение IE9</h2>
+                    [ Синий экран смерти ][ 14 ]
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Гарантированное воспроизвидение видеоролика без лагов</h2>
+                        [ Этапы инициализаци ][ 15 ]
+                        <ol>
+                            loadstart - загрузка началась
+                            durationchange - изменилось значение продолжительности ролика
+                            loadedmetadata - мета данные загружены
+                            loadeddata - данные загружены для текущего кадра
+                            progress - процесс загрузки видео
+                            canplay - загруженно достаточно кадров для проигрывания видео
+                            canplaythrough - видео будет проигрываться без остановки на загрузку, при условии, что скорость загрузки останется на прежнем уровне
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>Гарантированное воспроизвидение видеоролика без лагов</h2>
+                        [ progress классический ][ 16 ]
+                    </section>
+                    <section>
+                        <h2>Первый нюанс. Видеоролик в кэше</h2>
+                        [ progress классический + проблема кэша ][ 17 ]
+                    </section>
+                    <section>
+                        <h2>Первый нюанс. Видеоролик в кэше</h2>
+                        [ progress + решение проблемы кэша ][ 18 ]
+                    </section>
+                    <section>
+                        <h2>Второй нюанс. progress врет!</h2>
+                        [ progress классический ][ 19 ]
+                    </section>
+                    <section>
+                        <h2>Второй нюанс. progress врет!</h2>
+                        [ progress + решение проблемы кэша + бажное поведение progress ][ 20 ]
+                    </section>
+                    <section>
+                        <h2>Третий нюанс. canplaythrough врет!</h2>
+                        [ progress + решение проблемы кэша + canplaythrough][21]
+                        <pre>
+                            <code data-trim contenteditable>
+                                function linkify( selector ) {
+                                if( supports3DTransforms ) {
+
+                                var nodes = document.querySelectorAll( selector );
+
+                                for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+                                  var node = nodes[i];
+
+                                  if( !node.className ) {
+                                    node.className += ' roll';
+                                  }
+                                }
+                                }
+                                }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Третий нюанс. canplaythrough врет!</h2>
+                        [ схема: видеоролик под картинкой ][22]
+                    </section>
+                    <section>
+                        <h2>Третий нюанс. canplaythrough врет!</h2>
+                        [ progress + решение проблемы progress + ускорение проигрывания ][23]
+                    </section>
+                    <section>
+                        <h2>Гарантированное воспроизвидение видеоролика без лагов</h2>
+                        <ol>
+                            Проверяем по setInterval значение метода buffered (FF, Opera)
+                            Устанавливаем максимальную скорость проигрывания и проигрывем ролик под картинкой (IE9, Chrome)
+                            Слушаем событие end, которое сообщает, что ролик завершил проигрывание
+                            Устанавливаем прежние настройка ролика, убираем картнику, проигрываем ролик
+                        </ol>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Итоги</h2>
+
+                    <b>Форматы</b>
+                    &ndash; WebM – Chrome, FF, Opera
+                    &ndash; MP4 – IE, Safari
+
+                    <b>Скругление уголков</b>
+                    &ndash; canvas
+                    &ndash; border-radius + -webkit-mask-image (svg)
+
+                    <b>Отложенная загрузка</b>
+                    &ndash; Динамическая подстановка дорожки
+
+                    <b>Падение IE9</b>
+                    &ndash; Обновление драйвера
+                    &ndash; Один элемент видео на странице и его перемещение
+
+                    <b>Видеоролик в кэше</b>
+                    &ndash; setInterval
+
+                    <b>Гарантированное воспроизвидение видеоролика без лагов</b>
+                    &ndash; Progress нормально работает в FF и Opera
+                    &ndash; Для Chrome и IE9 ускоренное проигрывание ролика
+                </section>
+
+                <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
+                    <h2>Repeated Image Backgrounds</h2>
+                    <pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+                </section>
+
+                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+                    <h2>Background Transitions</h2>
+                    <p>
+                        Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
+                    </p>
+                </section>
+
+                <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+                    <h2>Background Transition Override</h2>
+                    <p>
+                        You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
+                    </p>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+    </html>
