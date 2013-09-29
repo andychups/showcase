@@ -31,16 +31,12 @@
                     <h3>@andychups</h3>
                 </section>
 
-                <section>
-                    <h2>[Скриншот старой главной][2]</h2>
-                </section>
+                <section data-background="static/4g-old.png" data-background-repeat="no-repeat" data-background-size="100%"></section>
+
+                <section data-background="static/4g-new.png" data-background-repeat="no-repeat" data-background-size="100%"></section>
 
                 <section>
-                    <h2>[Скриншот новой главной][3]</h2>
-                </section>
-
-                <section>
-                    <h2>[Скринкаст новой главной][4]</h2>
+                    <a href="http://ru.4game.com" target="_blank">click!</a>
                 </section>
 
                 <section>
@@ -55,16 +51,49 @@
                     </section>
                     <section>
                         <h3>JPEG Sprite + CSS Animation</h3>
-                        <code>
-                            setInterval(function() {
+                        <pre>
+                            <code data-trim>
+.b-video {
+    width: 310px;
+    height: 155px;
 
-                            });
-                        </code>
-                        + Анимация
+    background: url('game-movie.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    animation: movie step-start 0.3s infinite normal;
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h3>JPEG Sprite + CSS Animation</h3>
+                        <pre>
+                            <code data-trim>
+@keyframes movie {
+     0% {
+          background-position: 0 0;
+     }
+
+     30% {
+          background-position: 0 -20px;
+     }
+
+     100% {
+          background-position: 0 -40px;
+     }
+}
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>JPEG Sprite + CSS Animation</h3>
+                        <p>Анимация</p>
                     </section>
                     <section>
                         <h3>HTML5 Video</h3>
-                        Video vs. sprite
+                        <p>Сравнение анимаций: Video vs. sprite</p>
                     </section>
                 </section>
 
@@ -91,154 +120,399 @@
                 <section>
                     <section>
                         <h2>Скругление уголков</h2>
-                        [ Скругленные уголки и проблемы ][ 9 ]
+                        <pre>
+                        <code data-trim>
+.b-video {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+                        </code>
+                        </pre>
+                        <!-- [ Скругленные уголки и проблемы ][ 9 ] -->
+                    </section>
+
+                    <section>
+                        <h2>Скругление уголков</h2>
+                        <p class="b-top">Картинка: Скругленные уголки и проблемы</p>
                     </section>
 
                     <section>
                         <h2>Скругление уголков: где работает?</h2>
-                        [ Где поддерживается ][ 10 ]
-                        Картина получилась такая: Firefox, Opera до 12.02, IE9 – скругляют, Chrome – не скругляет.
+                        <ul>
+                            <li>Firefox, Opera до 12.02, IE9 &ndash; скругляют</li>
+                            <li>Chrome &ndash; не скругляет</li>
+                        </ul>
+                        <!--[ Где поддерживается ][ 10 ]-->
                     </section>
 
                     <section>
                         <h2>Скругление уголков: canvas</h2>
-                        [ Canvas ][ 11 ]
+                        <p class="b-top">Картинка-схема</p>
+                    </section>
+
+                    <section>
+                        <h2>Скругление уголков: canvas</h2>
+                        <pre>
+                        <code data-trim>
+var video = document.getElementById('js-video'),
+    canvas = document.getElementById('js-video-canvas');
+    context2d = canvas.getContext('2d'),
+    timer = null;
+
+video.addEventListener('play', function() {
+    timer = setInterval(function() {
+        context2d.drawImage(video, 0, 0, 310, 155);
+        // ... добавляем скругление при отрисовке
+    }, 30);
+});
+
+video.addEventListener('pause', function() {
+    clearInterval(timer);
+});
+                        </code>
+                        </pre>
+                        <!-- [ Canvas ][ 11 ] -->
                     </section>
 
                     <section>
                         <h2>Скругление уголков: маска</h2>
-                        [ WebKit border-radius ][ 12 ]
+                        <p class="b-top">Картинка-схема</p>
+                        <!-- [ WebKit border-radius ][ 12 ] -->
+                    </section>
+
+                    <section>
+                        <h2>Скругление уголков: маска</h2>
+                        <pre>
+                        <code data-trim>
+.b-video {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-mask-image: url('data:image/svg+xml;utf8 ...');
+}
+                        </code>
+                        </pre>
+                        <!-- [ WebKit border-radius ][ 12 ] -->
                     </section>
                 </section>
 
                 <section>
                     <h2>Отложенная загрузка</h2>
-                    [ Таблица с загрузкой видео + preload=none (ie9) ][ 13 ]
+                    <ul>
+                        <li>Opera, Chrome, Safari, IE9 &ndash; будут скачивать видеофайл</li>
+                        <li>Firefox &ndash; скачает только метаданные</li>
+                    </ul>
+                    <!-- [ Таблица с загрузкой видео + preload=none (ie9) ][ 13 ] -->
                 </section>
 
-                <section>
-                    <h2>Падение IE9</h2>
-                    [ Синий экран смерти ][ 14 ]
+                <section data-background="static/bsod.jpg" data-background-repeat="no-repeat" data-background-size="100%">
+                    <!--
+                        <h2>Падение IE9</h2>
+                        [ Синий экран смерти ][ 14 ]
+                    -->
                 </section>
 
                 <section>
                     <section>
-                        <h2>Гарантированное воспроизвидение видеоролика без лагов</h2>
-                        [ Этапы инициализаци ][ 15 ]
+                        <h2>Проигрывание ролика без лагов</h2>
+                        <!-- [ Этапы инициализаци ][ 15 ] -->
                         <ol>
-                            loadstart - загрузка началась
-                            durationchange - изменилось значение продолжительности ролика
-                            loadedmetadata - мета данные загружены
-                            loadeddata - данные загружены для текущего кадра
-                            progress - процесс загрузки видео
-                            canplay - загруженно достаточно кадров для проигрывания видео
-                            canplaythrough - видео будет проигрываться без остановки на загрузку, при условии, что скорость загрузки останется на прежнем уровне
+                            <li>loadstart</li>
+                            <li>durationchange</li>
+                            <li>loadedmetadata</li>
+                            <li>loadeddata</li>
+                            <li>progress</li>
+                            <li>canplay</li>
+                            <li>canplaythrough</li>
                         </ol>
+                        <!--
+                            <li><b>loadstart</b> &ndash; загрузка началась</li>
+                            <li><b>durationchange</b> &ndash; изменилось значение продолжительности ролика</li>
+                            <li><b>loadedmetadata</b> &ndash; мета данные загружены</li>
+                            <li><b>loadeddata</b> &ndash; данные загружены для текущего кадра</li>
+                            <li><b>progress</b> &ndash; процесс загрузки видео</li>
+                            <li><b>canplay</b> &ndash; загруженно достаточно кадров для проигрывания видео</li>
+                            <li><b>canplaythrough</b> &ndash;s видео будет проигрываться без остановки на загрузку, при условии, что скорость загрузки останется на прежнем уровне</li>
+                        -->
                     </section>
                     <section>
-                        <h2>Гарантированное воспроизвидение видеоролика без лагов</h2>
-                        [ progress классический ][ 16 ]
-                    </section>
-                    <section>
-                        <h2>Первый нюанс. Видеоролик в кэше</h2>
-                        [ progress классический + проблема кэша ][ 17 ]
-                    </section>
-                    <section>
-                        <h2>Первый нюанс. Видеоролик в кэше</h2>
-                        [ progress + решение проблемы кэша ][ 18 ]
-                    </section>
-                    <section>
-                        <h2>Второй нюанс. progress врет!</h2>
-                        [ progress классический ][ 19 ]
-                    </section>
-                    <section>
-                        <h2>Второй нюанс. progress врет!</h2>
-                        [ progress + решение проблемы кэша + бажное поведение progress ][ 20 ]
-                    </section>
-                    <section>
-                        <h2>Третий нюанс. canplaythrough врет!</h2>
-                        [ progress + решение проблемы кэша + canplaythrough][21]
-                        <pre>
-                            <code data-trim contenteditable>
-                                function linkify( selector ) {
-                                if( supports3DTransforms ) {
+                        <h2>Проигрывание ролика без лагов</h2>
+                        <!-- [ progress классический ][ 16 ] -->
+<pre><code data-trim>
+var video = document.getElementById('js-video'),
+    controller = { ... };
 
-                                var nodes = document.querySelectorAll( selector );
+video.addEventListener('progress', function() {
+    var percent,
+         /* Значение загруженной части видео (instance TimeRanges) */
+        downloadedVideoPart = video.buffered.end(video.buffered.length-1),
+         /* Значение продолжительности видео */
+        videoDuration = video.duration;
 
-                                for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-                                  var node = nodes[i];
+    percent = downloadedVideoPart / videoDuration * 100;
 
-                                  if( !node.className ) {
-                                    node.className += ' roll';
-                                  }
-                                }
-                                }
-                                }
-                            </code>
-                        </pre>
+    controller.progressBarUpdate(percent);
+
+    if (percent === 100) {
+        controller.showVideo();
+    }
+});</code></pre>
                     </section>
                     <section>
-                        <h2>Третий нюанс. canplaythrough врет!</h2>
+                        <h2>1. Видеоролик в кэше</h2>
+<pre><code data-trim>
+var video = document.getElementById('js-video'),
+    controller = { ... };
+
+video.addEventListener('progress', function() {
+    var percent,
+         /* Значение загруженной части видео (instance TimeRanges) */
+        downloadedVideoPart = video.buffered.end(video.buffered.length-1),
+         /* Значение продолжительности видео */
+        videoDuration = video.duration;
+
+    /* videoDuration === undefined */
+    percent = downloadedVideoPart / videoDuration * 100;
+
+    controller.progressBarUpdate(percent);
+
+    if (percent === 100) {
+        controller.showVideo();
+    }
+});</code></pre>
+                        <!-- [ progress классический + проблема кэша ][ 17 ] -->
+                    </section>
+                    <section>
+                        <h2>1. Видеоролик в кэше</h2>
+<pre><code data-trim>
+var video = document.getElementById('js-video'),
+    someVideoProgress,
+    controller = { ... };
+
+someVideoProgress = setInterval(function() {
+    var percent,
+         /* Значение загруженной части видео (instance TimeRanges) */
+        downloadedVideoPart = video.buffered.end(video.buffered.length-1),
+        videoDuration = video.duration;
+
+    if (typeof videoDuration === 'undefined') {
+        return;
+    }
+
+    percent = downloadedVideoPart / videoDuration * 100;
+
+    controller.progressBarUpdate(percent);
+
+    if (percent === 100) {
+        controller.showVideo();
+        clearInterval(someVideoProgress);
+    }
+});
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>2. progress врет!</h2>
+<pre><code data-trim>
+var video = document.getElementById('js-video'),
+    someVideoProgress,
+    controller = { ... };
+
+someVideoProgress = setInterval(function() {
+    var percent,
+         /* Значение отстается примерно на 95-98% в IE9, Chrome */
+        downloadedVideoPart = video.buffered.end(video.buffered.length-1),
+        videoDuration = video.duration;
+
+    if (typeof videoDuration === 'undefined') {
+        return;
+    }
+
+    percent = downloadedVideoPart / videoDuration * 100;
+
+    controller.progressBarUpdate(percent);
+
+    if (percent === 100) {
+        controller.showVideo();
+        clearInterval(someVideoProgress);
+    }
+});
+</code></pre>
+                        <!-- [ progress классический ][ 19 ] -->
+                    </section>
+                    <section>
+                        <h2>3. canplaythrough врет!</h2>
+                        <!-- [ progress + решение проблемы кэша + canplaythrough][21] -->
+<pre><code data-trim>
+var video = document.getElementById('js-video'),
+    someVideoProgress,
+    controller = { ... };
+
+function complete() {
+    controller.showVideo();
+    clearInterval(someVideoProgress);
+}
+
+someVideoProgress = setInterval(function() {
+    /* ... */
+
+    if (percent === 100) {
+        complete();
+    }
+});
+
+video.addEventListener('canplaythrough', function() {
+    complete();
+});
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>3. canplaythrough врет!</h2>
                         [ схема: видеоролик под картинкой ][22]
                     </section>
                     <section>
-                        <h2>Третий нюанс. canplaythrough врет!</h2>
-                        [ progress + решение проблемы progress + ускорение проигрывания ][23]
+                        <h2>3. canplaythrough врет!</h2>
+<pre><code data-trim>
+var video = document.getElementById('js-video'),
+    someVideoProgress,
+    controller = { ... };
+
+function complete() {
+    controller.showVideo();
+    video.defaultPlaybackRate = 100;
+    clearInterval(someVideoProgress);
+    /* ... */
+}
+
+/* Увеличиваем скорость проигрывания */
+video.defaultPlaybackRate = 100;
+
+/* Слушаем событие завершения проигрывания */
+video.addEventListener('end', function() {
+    complete();
+});
+
+someVideoProgress = setInterval(function() {
+    /* ... */
+
+    if (percent === 100) {
+        complete();
+    }
+});
+</code></pre>
+                        <!-- [ progress + решение проблемы progress + ускорение проигрывания ][23] -->
                     </section>
                     <section>
-                        <h2>Гарантированное воспроизвидение видеоролика без лагов</h2>
+                        <h2>Проигрывание ролика без лагов</h2>
                         <ol>
-                            Проверяем по setInterval значение метода buffered (FF, Opera)
-                            Устанавливаем максимальную скорость проигрывания и проигрывем ролик под картинкой (IE9, Chrome)
-                            Слушаем событие end, которое сообщает, что ролик завершил проигрывание
-                            Устанавливаем прежние настройка ролика, убираем картнику, проигрываем ролик
+                            <li>Проверяем по setInterval значение метода buffered (<b>FF, Opera</b>)</li>
+                            <li>Устанавливаем максимальную скорость проигрывания и проигрывем ролик под картинкой (<b>IE9, Chrome, Safari</b>)</li>
                         </ol>
                     </section>
+                </section>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                </section>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <ul>
+                        <li>WebM – Chrome, FF, Opera</li>
+                        <li>MP4 – IE, Safari</li>
+                    </ul>
                 </section>
 
                 <section>
                     <h2>Итоги</h2>
-
-                    <b>Форматы</b>
-                    &ndash; WebM – Chrome, FF, Opera
-                    &ndash; MP4 – IE, Safari
-
-                    <b>Скругление уголков</b>
-                    &ndash; canvas
-                    &ndash; border-radius + -webkit-mask-image (svg)
-
-                    <b>Отложенная загрузка</b>
-                    &ndash; Динамическая подстановка дорожки
-
-                    <b>Падение IE9</b>
-                    &ndash; Обновление драйвера
-                    &ndash; Один элемент видео на странице и его перемещение
-
-                    <b>Видеоролик в кэше</b>
-                    &ndash; setInterval
-
-                    <b>Гарантированное воспроизвидение видеоролика без лагов</b>
-                    &ndash; Progress нормально работает в FF и Opera
-                    &ndash; Для Chrome и IE9 ускоренное проигрывание ролика
+                    <p><b>Форматы</b></p>
+                    <p><b>Скругление уголков</b></p>
                 </section>
-
-                <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-                    <h2>Repeated Image Backgrounds</h2>
-                    <pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <p class="b-top"><b>Скругление уголков</b></p>
+                    <ul>
+                        <li>canvas</li>
+                        <li>border-radius + -webkit-mask-image (svg)</li>
+                    </ul>
                 </section>
-
-                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-                    <h2>Background Transitions</h2>
-                    <p>
-                        Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-                    </p>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <p><b>Скругление уголков</b></p>
+                    <p><b>Отложенная загрузка</b></p>
                 </section>
-
-                <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-                    <h2>Background Transition Override</h2>
-                    <p>
-                        You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-                    </p>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <p><b>Скругление уголков</b></p>
+                    <p class="b-top"><b>Отложенная загрузка</b></p>
+                    <ul>
+                        <li>Динамическая подстановка дорожки</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <p><b>Скругление уголков</b></p>
+                    <p><b>Отложенная загрузка</b></p>
+                    <p><b>Падение IE9</b></p>
+                </section>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <p><b>Скругление уголков</b></p>
+                    <p><b>Отложенная загрузка</b></p>
+                    <p class="b-top"><b>Падение IE9</b></p>
+                    <ul>
+                        <li>Обновление драйвера</li>
+                        <li>Один элемент видео на странице и его перемещение</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <p><b>Скругление уголков</b></p>
+                    <p><b>Отложенная загрузка</b></p>
+                    <p><b>Падение IE9</b></p>
+                    <p><b>Видеоролик в кэше</b></p>
+                </section>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <p><b>Скругление уголков</b></p>
+                    <p><b>Отложенная загрузка</b></p>
+                    <p><b>Падение IE9</b></p>
+                    <p class="b-top"><b>Видеоролик в кэше</b></p>
+                    <ul>
+                        <li>setInterval</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <p><b>Скругление уголков</b></p>
+                    <p><b>Отложенная загрузка</b></p>
+                    <p><b>Падение IE9</b></p>
+                    <p><b>Видеоролик в кэше</b></p>
+                    <p><b>Проигрывание ролика без лагов</b></p>
+                </section>
+                <section>
+                    <h2>Итоги</h2>
+                    <p><b>Форматы</b></p>
+                    <p><b>Скругление уголков</b></p>
+                    <p><b>Отложенная загрузка</b></p>
+                    <p><b>Падение IE9</b></p>
+                    <p><b>Видеоролик в кэше</b></p>
+                    <p class="b-top"><b>Проигрывание ролика без лагов</b></p>
+                    <ul>
+                        <li>Progress нормально работает в FF и Opera</li>
+                        <li>Для Chrome и IE9 ускоренное проигрывание ролика</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>вопросы?</h1>
                 </section>
             </div>
 
