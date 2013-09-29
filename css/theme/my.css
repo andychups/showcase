@@ -193,3 +193,8 @@ body {
 p.b-top {
     margin-top: 15px;
 }
+
+img {
+    border: 0 !important;
+    box-shadow: none !important;
+}

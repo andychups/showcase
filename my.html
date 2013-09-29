@@ -147,21 +147,21 @@
 
                     <section>
                         <h2>Скругление уголков</h2>
-                        <p class="b-top">Картинка: Скругленные уголки и проблемы</p>
+                        <img src="static/border-radius.jpg" />
                     </section>
 
                     <section>
                         <h2>Скругление уголков: где работает?</h2>
                         <ul>
                             <li>Firefox, Opera до 12.02, IE9 &ndash; скругляют</li>
-                            <li>Chrome &ndash; не скругляет</li>
+                            <li>Chrome, Safari 5.0 &ndash; не скругляют</li>
                         </ul>
                         <!--[ Где поддерживается ][ 10 ]-->
                     </section>
 
                     <section>
                         <h2>Скругление уголков: canvas</h2>
-                        <p class="b-top">Картинка-схема</p>
+                        <img src="static/canvas.jpg" />
                     </section>
 
                     <section>
@@ -190,7 +190,7 @@ video.addEventListener('pause', function() {
 
                     <section>
                         <h2>Скругление уголков: маска</h2>
-                        <p class="b-top">Картинка-схема</p>
+                        <img src="static/mask-svg.jpg" />
                         <!-- [ WebKit border-radius ][ 12 ] -->
                     </section>
 
@@ -381,7 +381,7 @@ video.addEventListener('canplaythrough', function() {
                     </section>
                     <section>
                         <h2>3. canplaythrough врет!</h2>
-                        [ схема: видеоролик под картинкой ][22]
+                        <img src="static/video.jpg" />
                     </section>
                     <section>
                         <h2>3. canplaythrough врет!</h2>
@@ -392,7 +392,7 @@ var video = document.getElementById('js-video'),
 
 function complete() {
     controller.showVideo();
-    video.defaultPlaybackRate = 100;
+    video.defaultPlaybackRate = 1;
     clearInterval(someVideoProgress);
     /* ... */
 }
