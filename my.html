@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="css/theme/my.css" id="theme">
 
     <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
+    <link rel="stylesheet" href="lib/css/monokai.css">    
   </head>
 
   <body>
@@ -36,7 +37,7 @@
         <section data-background="static/4g-new.png" data-background-repeat="no-repeat" data-background-size="100%"></section>
 
         <section>
-          <a href="http://ru.4game.com" target="_blank">click!</a>
+          <a href="http://ru.4game.com" target="_blank">ru.4game.com</a>
         </section>
 
           <section>
@@ -74,11 +75,9 @@
    0% {
       background-position: 0 0;
    }
-
    30% {
       background-position: 0 -20px;
    }
-
    100% {
       background-position: 0 -40px;
    }
@@ -168,18 +167,18 @@
             <pre>
             <code style="font-size: 40px !important;" data-trim>
 var $video = $('#js-video'),
-  $canvas = $('#js-video-canvas');
-  context2d = $canvas[0].getContext('2d'),
-  timer = null;
+    $canvas = $('#js-video-canvas');
+    context2d = $canvas[0].getContext('2d'),
+    timer = null;
 
-$video.on('play', function() {
-  timer = setInterval(function() {
-    context2d.drawImage($video[0], 0, 0, 310, 155);
-    // ... добавляем скругление при отрисовке
+$video.on('play', function () {
+  timer = setInterval(function () {
+    context2d.drawImage(video, 0, 0, 310, 155);
+    /* ... добавляем скругление при отрисовке */
   }, 30);
 });
 
-$video.on('pause', function() {
+$video.on('pause', function () {
   clearInterval(timer);
 });
             </code>
@@ -252,13 +251,12 @@ $video.on('pause', function() {
             <h2>Проигрывание ролика без лагов</h2>
             <!-- [ progress классический ][ 16 ] -->
 <pre><code data-trim>
-$video.on('progress', function() {
+$video.on('progress', function () {
   var percent,
       downloadedVideoPart = $video[0].buffered.end(0),
       videoDuration = $video[0].duration;
 
   percent = downloadedVideoPart / videoDuration * 100;
-
   progressBarUpdate(percent);
 
   if (percent === 100) {
@@ -269,14 +267,13 @@ $video.on('progress', function() {
           <section>
             <h2>1. Видеоролик в кэше</h2>
 <pre><code data-trim>
-$video.on('progress', function() {
+$video.on('progress', function () {
   var percent,
       downloadedVideoPart = $video[0].buffered.end(0),
       videoDuration = $video[0].duration;
   
   /* videoDuration === undefined */
   percent = downloadedVideoPart / videoDuration * 100;
-
   progressBarUpdate(percent);
 
   if (percent === 100) {
@@ -288,7 +285,7 @@ $video.on('progress', function() {
           <section>
             <h2>1. Видеоролик в кэше</h2>
 <pre><code data-trim>
-var someVideoProgress = setInterval(function() {
+someVideoProgress = setInterval(function () {
   var percent,
       downloadedVideoPart = $video[0].buffered.end(0),
       videoDuration = $video[0].duration;
@@ -298,7 +295,6 @@ var someVideoProgress = setInterval(function() {
   }
 
   percent = downloadedVideoPart / videoDuration * 100;
-
   progressBarUpdate(percent);
 
   if (percent === 100) {
@@ -311,17 +307,17 @@ var someVideoProgress = setInterval(function() {
           <section>
             <h2>2. progress врет!</h2>
 <pre><code data-trim>
-var someVideoProgress = setInterval(function() {
+someVideoProgress = setInterval(function () {
   var percent,
-      downloadedVideoPart = video.buffered.end(0),
-      videoDuration = video.duration;
+      /* Chrome, IE9 - 95%-98% */
+      downloadedVideoPart = $video[0].buffered.end(0),
+      videoDuration = $video[0].duration;
 
   if (typeof videoDuration === 'undefined') {
     return;
   }
 
   percent = downloadedVideoPart / videoDuration * 100;
-
   progressBarUpdate(percent);
 
   if (percent === 100) {
@@ -369,7 +365,7 @@ function complete() {
 
 $video[0].defaultPlaybackRate = 100;
 
-$video.on('end', function() {
+$video.on('ended', function() {
   complete();
 });
 
