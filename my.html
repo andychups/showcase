@@ -1,564 +1,533 @@
-    <!doctype html>
-    <html lang="en">
+  <!doctype html>
+  <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-        <title>HTML5 Video &ndash; @andychups</title>
+    <title>HTML5 Video &ndash; @andychups</title>
 
-        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-        <meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link rel="stylesheet" href="css/reveal.min.css">
-        <link rel="stylesheet" href="css/theme/my.css" id="theme">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/my.css" id="theme">
 
-        <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="lib/css/zenburn.css">
-    </head>
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+  </head>
 
-    <body>
+  <body>
 
-        <div class="reveal">
+    <div class="reveal">
 
-            <!-- Any section element inside of this container is displayed as a slide -->
-            <div class="slides">
-                <section>
-                    <h1>HTML5 Video</h1>
-                    <h3>@andychups</h3>
-                </section>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>HTML5 Video</h1>
+          <h3>@andychups</h3>
+        </section>
 
-                <section data-background="static/4g-old.png" data-background-repeat="no-repeat" data-background-size="100%"></section>
+        <section data-background="static/4g-old.png" data-background-repeat="no-repeat" data-background-size="100%"></section>
 
-                <section data-background="static/4g-new.png" data-background-repeat="no-repeat" data-background-size="100%"></section>
+        <section data-background="static/4g-new.png" data-background-repeat="no-repeat" data-background-size="100%"></section>
 
-                <section>
-                    <a href="http://ru.4game.com" target="_blank">click!</a>
-                </section>
+        <section>
+          <a href="http://ru.4game.com" target="_blank">click!</a>
+        </section>
 
-                <section>
-                    <section>
-                        <h2>Варианты решения задачи</h2>
-                        <ol>
-                            <li>Flash</li>
-                            <li>Gif</li>
-                            <li>JPEG Sprite + CSS Animation</li>
-                            <li>HTML5 Video</li>
-                        </ol>
-                    </section>
-                    <section>
-                        <h3>JPEG Sprite + CSS Animation</h3>
-                        <pre>
-                            <code data-trim>
+          <section>
+            <h2>Варианты решения задачи</h2>
+            <ol>
+              <li>Flash</li>
+              <li>Gif</li>
+              <li>JPEG Sprite + CSS Animation</li>
+              <li>HTML5 Video</li>
+            </ol>
+          </section>
+          <section>
+            <h3>JPEG Sprite + CSS Animation</h3>
+            <pre>
+              <code style="font-size: 40px !important;" data-trim>
 .b-video {
-    width: 310px;
-    height: 155px;
+  width: 310px;
+  height: 155px;
 
-    background: url('game-movie.png');
-    background-repeat: no-repeat;
-    background-position: 0 0;
+  background: url('game-movie.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
 
-    animation: movie step-start 0.3s infinite normal;
+  animation: movie step-start 0.3s infinite normal;
 }
-                            </code>
-                        </pre>
-                    </section>
+              </code>
+            </pre>
+          </section>
 
-                    <section>
-                        <h3>JPEG Sprite + CSS Animation</h3>
-                        <pre>
-                            <code data-trim>
+          <section>
+            <h3>JPEG Sprite + CSS Animation</h3>
+            <pre>
+              <code style="font-size: 50px !important;" data-trim>
 @keyframes movie {
-     0% {
-          background-position: 0 0;
-     }
+   0% {
+      background-position: 0 0;
+   }
 
-     30% {
-          background-position: 0 -20px;
-     }
+   30% {
+      background-position: 0 -20px;
+   }
 
-     100% {
-          background-position: 0 -40px;
-     }
+   100% {
+      background-position: 0 -40px;
+   }
 }
-                            </code>
-                        </pre>
-                    </section>
-                    <section>
-                        <h3>JPEG Sprite + CSS Animation</h3>
-                        <p>Анимация</p>
-                        <p><b>1 Мб</b></p>
-                    </section>
-                    <section>
-                        <h3>HTML5 Video</h3>
-                        <video autoplay="true" preload="auto" loop="true">
-                            <source type="video/webm" src="static/video.webm" />
-                            <source type="video/webm" src="static/video.mp4" />
-                        </video>
-                        <p><b>~700 Кб</b></p>
-                    </section>
-                    <section>
-                        <h3>HTML5 Video vs JPEG Sprite</h3>
-                        <video autoplay="true" preload="auto" loop="true">
-                            <source type="video/webm" src="static/video.webm" />
-                            <source type="video/webm" src="static/video.mp4" />
-                        </video>
-                        <p>Сравнение анимаций: Video vs. sprite</p>
-                    </section>
-                </section>
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h3>JPEG Sprite + CSS Animation</h3>
+            <p>Анимация</p>
+            <p><b>1 Мб</b></p>
+          </section>
+          <section>
+            <h3>HTML5 Video</h3>
+            <video autoplay="true" preload="auto" loop="true">
+              <source type="video/webm" src="static/video.webm" />
+              <source type="video/webm" src="static/video.mp4" />
+            </video>
+            <p><b>~700 Кб</b></p>
+          </section>
+          <section>
+            <h3>HTML5 Video vs JPEG Sprite</h3>
+            <video autoplay="true" preload="auto" loop="true">
+              <source type="video/webm" src="static/video.webm" />
+              <source type="video/webm" src="static/video.mp4" />
+            </video>
+            <p>Сравнение анимаций: Video vs. sprite</p>
+          </section>
 
-                <section>
-                    <h2>Поддержка HTML5 Video</h2>
-                    <ul>
-                        <li>Firefox 3.5+</li>
-                        <li>Chrome 4.0+</li>
-                        <li>Opera 10.5+</li>
-                        <li>IE 9+</li>
-                        <li>Safari 4.0+</li>
-                    </ul>
-                </section>
 
-                <section>
-                    <h2>Форматы</h2>
-                    <ul>
-                        <li><b>WebM</b> &ndash; Firefox 4.0+, Chrome 6.0+, Opera 10.6+</li>
-                        <li><b>MP4</b> &ndash; IE 9+, Safari 4.0+</li>
-                    </ul>
-                    <p class="b-top"><b>Конвертор</b> &ndash; FireOgg</p>
-                </section>
+        <section>
+          <h2>Поддержка HTML5 Video</h2>
+          <ul>
+            <li>Firefox 3.5+</li>
+            <li>Chrome 4.0+</li>
+            <li>Opera 10.5+</li>
+            <li>IE 9+</li>
+            <li>Safari 4.0+</li>
+          </ul>
+        </section>
 
-                <section>
-                    <section>
-                        <h2>Скругление уголков</h2>
-                        <pre>
-                        <code data-trim>
+        <section>
+          <h2>Форматы</h2>
+          <ul>
+            <li><b>WebM</b> &ndash; Firefox 4.0+, Chrome 6.0+, Opera 10.6+</li>
+            <li><b>MP4</b> &ndash; IE 9+, Safari 4.0+</li>
+          </ul>
+          <p class="b-top"><b>Конвертор</b> &ndash; FireOgg</p>
+        </section>
+
+
+          <section>
+            <h2>Скругление уголков</h2>
+            <pre>
+            <code style="font-size: 50px !important;" data-trim>
 .b-video {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
-                        </code>
-                        </pre>
-                        <!-- [ Скругленные уголки и проблемы ][ 9 ] -->
-                    </section>
+            </code>
+            </pre>
+            <!-- [ Скругленные уголки и проблемы ][ 9 ] -->
+          </section>
 
-                    <section>
-                        <h2>Скругление уголков</h2>
-                        <img src="static/border-radius.jpg" />
-                    </section>
+          <section>
+            <h2>Скругление уголков</h2>
+            <img src="static/border-radius.jpg" />
+          </section>
 
-                    <section>
-                        <h2>Скругление уголков: где работает?</h2>
-                        <ul>
-                            <li>Firefox, Opera до 12.02, IE9 &ndash; скругляют</li>
-                            <li>Chrome, Safari 5.0 &ndash; не скругляют</li>
-                        </ul>
-                        <!--[ Где поддерживается ][ 10 ]-->
-                    </section>
+          <section>
+            <h2>Скругление уголков: где работает?</h2>
+            <ul>
+              <li>Firefox, Opera до 12.02, IE9 &ndash; скругляют</li>
+              <li>Chrome, Safari 5.0 &ndash; не скругляют</li>
+            </ul>
+            <!--[ Где поддерживается ][ 10 ]-->
+          </section>
 
-                    <section>
-                        <h2>Скругление уголков: canvas</h2>
-                        <img src="static/canvas.jpg" />
-                    </section>
+          <section>
+            <h2>Скругление уголков: canvas</h2>
+            <img src="static/canvas.jpg" />
+          </section>
 
-                    <section>
-                        <h2>Скругление уголков: canvas</h2>
-                        <pre>
-                        <code data-trim>
-var video = document.getElementById('js-video'),
-    canvas = document.getElementById('js-video-canvas');
-    context2d = canvas.getContext('2d'),
-    timer = null;
+          <section>
+            <h2>Скругление уголков: canvas</h2>
+            <pre>
+            <code style="font-size: 40px !important;" data-trim>
+var $video = $('#js-video'),
+  $canvas = $('#js-video-canvas');
+  context2d = $canvas[0].getContext('2d'),
+  timer = null;
 
-video.addEventListener('play', function() {
-    timer = setInterval(function() {
-        context2d.drawImage(video, 0, 0, 310, 155);
-        // ... добавляем скругление при отрисовке
-    }, 30);
+$video.on('play', function() {
+  timer = setInterval(function() {
+    context2d.drawImage($video[0], 0, 0, 310, 155);
+    // ... добавляем скругление при отрисовке
+  }, 30);
 });
 
-video.addEventListener('pause', function() {
-    clearInterval(timer);
+$video.on('pause', function() {
+  clearInterval(timer);
 });
-                        </code>
-                        </pre>
-                        <!-- [ Canvas ][ 11 ] -->
-                    </section>
+            </code>
+            </pre>
+            <!-- [ Canvas ][ 11 ] -->
+          </section>
 
-                    <section>
-                        <h2>Скругление уголков: маска</h2>
-                        <img src="static/mask-svg.jpg" />
-                        <!-- [ WebKit border-radius ][ 12 ] -->
-                    </section>
+          <section>
+            <h2>Скругление уголков: маска</h2>
+            <img src="static/mask-svg.jpg" />
+            <!-- [ WebKit border-radius ][ 12 ] -->
+          </section>
 
-                    <section>
-                        <h2>Скругление уголков: маска</h2>
-                        <pre>
-                        <code data-trim>
+          <section>
+            <h2>Скругление уголков: маска</h2>
+            <pre>
+            <code style="font-size: 40px !important;" data-trim>
 .b-video {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-mask-image: url('data:image/svg+xml;utf8 ...');
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-mask-image: url('data:image/svg+xml;utf8');
 }
-                        </code>
-                        </pre>
-                        <!-- [ WebKit border-radius ][ 12 ] -->
-                    </section>
-                </section>
+            </code>
+            </pre>
+            <!-- [ WebKit border-radius ][ 12 ] -->
+          </section>
 
-                <section>
-                    <h2>Отложенная загрузка</h2>
-                    <ul>
-                        <li>Opera, Chrome, Safari, IE9 &ndash; будут скачивать видеофайл</li>
-                        <li>Firefox &ndash; скачает только метаданные</li>
-                    </ul>
-                    <!-- [ Таблица с загрузкой видео + preload=none (ie9) ][ 13 ] -->
-                </section>
 
-                <section data-background="static/bsod.jpg" data-background-repeat="no-repeat" data-background-size="100%">
-                    <!--
-                        <h2>Падение IE9</h2>
-                        [ Синий экран смерти ][ 14 ]
-                    -->
-                </section>
+        <section>
+          <h2>Отложенная загрузка</h2>
+          <ul>
+            <li>Opera, Chrome, Safari, IE9 &ndash; будут скачивать видеофайл</li>
+            <li>Firefox &ndash; скачает только метаданные</li>
+          </ul>
+          <!-- [ Таблица с загрузкой видео + preload=none (ie9) ][ 13 ] -->
+        </section>
 
-                <section>
-                    <section>
-                        <h2>Проигрывание ролика без лагов</h2>
-                        <!-- [ Этапы инициализаци ][ 15 ] -->
-                        <ol>
-                            <li>loadstart</li>
-                            <li>durationchange</li>
-                            <li>loadedmetadata</li>
-                            <li>loadeddata</li>
-                            <li>progress</li>
-                            <li>canplay</li>
-                            <li>canplaythrough</li>
-                        </ol>
-                        <!--
-                            <li><b>loadstart</b> &ndash; загрузка началась</li>
-                            <li><b>durationchange</b> &ndash; изменилось значение продолжительности ролика</li>
-                            <li><b>loadedmetadata</b> &ndash; мета данные загружены</li>
-                            <li><b>loadeddata</b> &ndash; данные загружены для текущего кадра</li>
-                            <li><b>progress</b> &ndash; процесс загрузки видео</li>
-                            <li><b>canplay</b> &ndash; загруженно достаточно кадров для проигрывания видео</li>
-                            <li><b>canplaythrough</b> &ndash;s видео будет проигрываться без остановки на загрузку, при условии, что скорость загрузки останется на прежнем уровне</li>
-                        -->
-                    </section>
-                    <section>
-                        <h2>Проигрывание ролика без лагов</h2>
-                        <!-- [ progress классический ][ 16 ] -->
+        <section data-background="static/bsod.jpg" data-background-repeat="no-repeat" data-background-size="100%">
+          <!--
+            <h2>Падение IE9</h2>
+            [ Синий экран смерти ][ 14 ]
+          -->
+        </section>
+
+
+          <section>
+            <h2>Проигрывание ролика без лагов</h2>
+            <!-- [ Этапы инициализаци ][ 15 ] -->
+            <ol>
+              <li>loadstart</li>
+              <li>durationchange</li>
+              <li>loadedmetadata</li>
+              <li>loadeddata</li>
+              <li>progress</li>
+              <li>canplay</li>
+              <li>canplaythrough</li>
+            </ol>
+            <!--
+              <li><b>loadstart</b> &ndash; загрузка началась</li>
+              <li><b>durationchange</b> &ndash; изменилось значение продолжительности ролика</li>
+              <li><b>loadedmetadata</b> &ndash; мета данные загружены</li>
+              <li><b>loadeddata</b> &ndash; данные загружены для текущего кадра</li>
+              <li><b>progress</b> &ndash; процесс загрузки видео</li>
+              <li><b>canplay</b> &ndash; загруженно достаточно кадров для проигрывания видео</li>
+              <li><b>canplaythrough</b> &ndash;s видео будет проигрываться без остановки на загрузку, при условии, что скорость загрузки останется на прежнем уровне</li>
+            -->
+          </section>
+          <section>
+            <h2>Проигрывание ролика без лагов</h2>
+            <!-- [ progress классический ][ 16 ] -->
 <pre><code data-trim>
-var video = document.getElementById('js-video'),
-    controller = { ... };
+$video.on('progress', function() {
+  var percent,
+      downloadedVideoPart = $video[0].buffered.end(0),
+      videoDuration = $video[0].duration;
 
-video.addEventListener('progress', function() {
-    var percent,
-         /* Значение загруженной части видео (instance TimeRanges) */
-        downloadedVideoPart = video.buffered.end(video.buffered.length-1),
-         /* Значение продолжительности видео */
-        videoDuration = video.duration;
+  percent = downloadedVideoPart / videoDuration * 100;
 
-    percent = downloadedVideoPart / videoDuration * 100;
+  progressBarUpdate(percent);
 
-    controller.progressBarUpdate(percent);
-
-    if (percent === 100) {
-        controller.showVideo();
-    }
+  if (percent === 100) {
+    showVideo();
+  }
 });</code></pre>
-                    </section>
-                    <section>
-                        <h2>1. Видеоролик в кэше</h2>
+          </section>
+          <section>
+            <h2>1. Видеоролик в кэше</h2>
 <pre><code data-trim>
-var video = document.getElementById('js-video'),
-    controller = { ... };
+$video.on('progress', function() {
+  var percent,
+      downloadedVideoPart = $video[0].buffered.end(0),
+      videoDuration = $video[0].duration;
+  
+  /* videoDuration === undefined */
+  percent = downloadedVideoPart / videoDuration * 100;
 
-video.addEventListener('progress', function() {
-    var percent,
-         /* Значение загруженной части видео (instance TimeRanges) */
-        downloadedVideoPart = video.buffered.end(video.buffered.length-1),
-         /* Значение продолжительности видео */
-        videoDuration = video.duration;
+  progressBarUpdate(percent);
 
-    /* videoDuration === undefined */
-    percent = downloadedVideoPart / videoDuration * 100;
-
-    controller.progressBarUpdate(percent);
-
-    if (percent === 100) {
-        controller.showVideo();
-    }
+  if (percent === 100) {
+    showVideo();
+  }
 });</code></pre>
-                        <!-- [ progress классический + проблема кэша ][ 17 ] -->
-                    </section>
-                    <section>
-                        <h2>1. Видеоролик в кэше</h2>
+            <!-- [ progress классический + проблема кэша ][ 17 ] -->
+          </section>
+          <section>
+            <h2>1. Видеоролик в кэше</h2>
 <pre><code data-trim>
-var video = document.getElementById('js-video'),
-    someVideoProgress,
-    controller = { ... };
+var someVideoProgress = setInterval(function() {
+  var percent,
+      downloadedVideoPart = $video[0].buffered.end(0),
+      videoDuration = $video[0].duration;
 
-someVideoProgress = setInterval(function() {
-    var percent,
-         /* Значение загруженной части видео (instance TimeRanges) */
-        downloadedVideoPart = video.buffered.end(video.buffered.length-1),
-        videoDuration = video.duration;
+  if (typeof videoDuration === 'undefined') {
+    return;
+  }
 
-    if (typeof videoDuration === 'undefined') {
-        return;
-    }
+  percent = downloadedVideoPart / videoDuration * 100;
 
-    percent = downloadedVideoPart / videoDuration * 100;
+  progressBarUpdate(percent);
 
-    controller.progressBarUpdate(percent);
-
-    if (percent === 100) {
-        controller.showVideo();
-        clearInterval(someVideoProgress);
-    }
-});
-</code></pre>
-                    </section>
-                    <section>
-                        <h2>2. progress врет!</h2>
-<pre><code data-trim>
-var video = document.getElementById('js-video'),
-    someVideoProgress,
-    controller = { ... };
-
-someVideoProgress = setInterval(function() {
-    var percent,
-         /* Значение отстается примерно на 95-98% в IE9, Chrome */
-        downloadedVideoPart = video.buffered.end(video.buffered.length-1),
-        videoDuration = video.duration;
-
-    if (typeof videoDuration === 'undefined') {
-        return;
-    }
-
-    percent = downloadedVideoPart / videoDuration * 100;
-
-    controller.progressBarUpdate(percent);
-
-    if (percent === 100) {
-        controller.showVideo();
-        clearInterval(someVideoProgress);
-    }
-});
-</code></pre>
-                        <!-- [ progress классический ][ 19 ] -->
-                    </section>
-                    <section>
-                        <h2>3. canplaythrough врет!</h2>
-                        <!-- [ progress + решение проблемы кэша + canplaythrough][21] -->
-<pre><code data-trim>
-var video = document.getElementById('js-video'),
-    someVideoProgress,
-    controller = { ... };
-
-function complete() {
-    controller.showVideo();
+  if (percent === 100) {
+    showVideo();
     clearInterval(someVideoProgress);
+  }
+});
+</code></pre>
+          </section>
+          <section>
+            <h2>2. progress врет!</h2>
+<pre><code data-trim>
+var someVideoProgress = setInterval(function() {
+  var percent,
+      downloadedVideoPart = video.buffered.end(0),
+      videoDuration = video.duration;
+
+  if (typeof videoDuration === 'undefined') {
+    return;
+  }
+
+  percent = downloadedVideoPart / videoDuration * 100;
+
+  progressBarUpdate(percent);
+
+  if (percent === 100) {
+    showVideo();
+    clearInterval(someVideoProgress);
+  }
+});
+</code></pre>
+            <!-- [ progress классический ][ 19 ] -->
+          </section>
+          <section>
+            <h2>3. canplaythrough врет!</h2>
+            <!-- [ progress + решение проблемы кэша + canplaythrough][21] -->
+<pre><code data-trim>
+function complete() {
+  showVideo();
+  clearInterval(someVideoProgress);
 }
 
-someVideoProgress = setInterval(function() {
-    /* ... */
+var someVideoProgress = setInterval(function() {
+  /* ... */
 
-    if (percent === 100) {
-        complete();
-    }
+  if (percent === 100) {
+    complete();
+  }
 });
 
-video.addEventListener('canplaythrough', function() {
-    complete();
+$video.on('canplaythrough', function() {
+  complete();
 });
 </code></pre>
-                    </section>
-                    <section>
-                        <h2>3. canplaythrough врет!</h2>
-                        <img src="static/video.jpg" />
-                    </section>
-                    <section>
-                        <h2>3. canplaythrough врет!</h2>
+          </section>
+          <section>
+            <h2>3. canplaythrough врет!</h2>
+            <img src="static/video.jpg" />
+          </section>
+          <section>
+            <h2>3. canplaythrough врет!</h2>
 <pre><code data-trim>
-var video = document.getElementById('js-video'),
-    someVideoProgress,
-    controller = { ... };
-
 function complete() {
-    controller.showVideo();
-    video.defaultPlaybackRate = 1;
-    clearInterval(someVideoProgress);
-    /* ... */
+  showVideo();
+  $video[0].defaultPlaybackRate = 1;
+  clearInterval(someVideoProgress);
 }
 
-/* Увеличиваем скорость проигрывания */
-video.defaultPlaybackRate = 100;
+$video[0].defaultPlaybackRate = 100;
 
-/* Слушаем событие завершения проигрывания */
-video.addEventListener('end', function() {
-    complete();
+$video.on('end', function() {
+  complete();
 });
 
-someVideoProgress = setInterval(function() {
-    /* ... */
+var someVideoProgress = setInterval(function() {
+  /* ... */
 
-    if (percent === 100) {
-        complete();
-    }
+  if (percent === 100) {
+    complete();
+  }
 });
 </code></pre>
-                        <!-- [ progress + решение проблемы progress + ускорение проигрывания ][23] -->
-                    </section>
-                    <section>
-                        <h2>Проигрывание ролика без лагов</h2>
-                        <ol>
-                            <li>Проверяем по setInterval значение метода buffered (<b>FF, Opera</b>)</li>
-                            <li>Устанавливаем максимальную скорость проигрывания и проигрывем ролик под картинкой (<b>IE9, Chrome, Safari</b>)</li>
-                        </ol>
-                    </section>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <ul>
-                        <li>WebM – Chrome, FF, Opera</li>
-                        <li>MP4 – IE, Safari</li>
-                    </ul>
-                </section>
+            <!-- [ progress + решение проблемы progress + ускорение проигрывания ][23] -->
+          </section>
+          <section>
+            <h2>Проигрывание ролика без лагов</h2>
+            <ol>
+              <li>Проверяем по setInterval значение метода buffered (<b>FF, Opera</b>)</li>
+              <li>Устанавливаем максимальную скорость проигрывания и проигрывем ролик под картинкой (<b>IE9, Chrome, Safari</b>)</li>
+            </ol>
+          </section>
 
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p><b>Скругление уголков</b></p>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p class="b-top"><b>Скругление уголков</b></p>
-                    <ul>
-                        <li>canvas</li>
-                        <li>border-radius + -webkit-mask-image (svg)</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p><b>Скругление уголков</b></p>
-                    <p><b>Отложенная загрузка</b></p>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p><b>Скругление уголков</b></p>
-                    <p class="b-top"><b>Отложенная загрузка</b></p>
-                    <ul>
-                        <li>Динамическая подстановка дорожки</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p><b>Скругление уголков</b></p>
-                    <p><b>Отложенная загрузка</b></p>
-                    <p><b>Падение IE9</b></p>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p><b>Скругление уголков</b></p>
-                    <p><b>Отложенная загрузка</b></p>
-                    <p class="b-top"><b>Падение IE9</b></p>
-                    <ul>
-                        <li>Обновление драйвера</li>
-                        <li>Один элемент видео на странице и его перемещение</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p><b>Скругление уголков</b></p>
-                    <p><b>Отложенная загрузка</b></p>
-                    <p><b>Падение IE9</b></p>
-                    <p><b>Видеоролик в кэше</b></p>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p><b>Скругление уголков</b></p>
-                    <p><b>Отложенная загрузка</b></p>
-                    <p><b>Падение IE9</b></p>
-                    <p class="b-top"><b>Видеоролик в кэше</b></p>
-                    <ul>
-                        <li>setInterval</li>
-                    </ul>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p><b>Скругление уголков</b></p>
-                    <p><b>Отложенная загрузка</b></p>
-                    <p><b>Падение IE9</b></p>
-                    <p><b>Видеоролик в кэше</b></p>
-                    <p><b>Проигрывание ролика без лагов</b></p>
-                </section>
-                <section>
-                    <h2>Итоги</h2>
-                    <p><b>Форматы</b></p>
-                    <p><b>Скругление уголков</b></p>
-                    <p><b>Отложенная загрузка</b></p>
-                    <p><b>Падение IE9</b></p>
-                    <p><b>Видеоролик в кэше</b></p>
-                    <p class="b-top"><b>Проигрывание ролика без лагов</b></p>
-                    <ul>
-                        <li>Progress нормально работает в FF и Opera</li>
-                        <li>Для Chrome и IE9 ускоренное проигрывание ролика</li>
-                    </ul>
-                </section>
-                <section>
-                    <h1>вопросы?</h1>
-                </section>
-            </div>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <ul>
+            <li>WebM – Chrome, FF, Opera</li>
+            <li>MP4 – IE, Safari</li>
+          </ul>
+        </section>
 
-        </div>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p><b>Скругление уголков</b></p>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p class="b-top"><b>Скругление уголков</b></p>
+          <ul>
+            <li>canvas</li>
+            <li>border-radius + -webkit-mask-image (svg)</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p><b>Скругление уголков</b></p>
+          <p><b>Отложенная загрузка</b></p>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p><b>Скругление уголков</b></p>
+          <p class="b-top"><b>Отложенная загрузка</b></p>
+          <ul>
+            <li>Динамическая подстановка дорожки</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p><b>Скругление уголков</b></p>
+          <p><b>Отложенная загрузка</b></p>
+          <p><b>Падение IE9</b></p>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p><b>Скругление уголков</b></p>
+          <p><b>Отложенная загрузка</b></p>
+          <p class="b-top"><b>Падение IE9</b></p>
+          <ul>
+            <li>Обновление драйвера</li>
+            <li>Один элемент видео на странице и его перемещение</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p><b>Скругление уголков</b></p>
+          <p><b>Отложенная загрузка</b></p>
+          <p><b>Падение IE9</b></p>
+          <p><b>Видеоролик в кэше</b></p>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p><b>Скругление уголков</b></p>
+          <p><b>Отложенная загрузка</b></p>
+          <p><b>Падение IE9</b></p>
+          <p class="b-top"><b>Видеоролик в кэше</b></p>
+          <ul>
+            <li>setInterval</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p><b>Скругление уголков</b></p>
+          <p><b>Отложенная загрузка</b></p>
+          <p><b>Падение IE9</b></p>
+          <p><b>Видеоролик в кэше</b></p>
+          <p><b>Проигрывание ролика без лагов</b></p>
+        </section>
+        <section>
+          <h2>Итоги</h2>
+          <p><b>Форматы</b></p>
+          <p><b>Скругление уголков</b></p>
+          <p><b>Отложенная загрузка</b></p>
+          <p><b>Падение IE9</b></p>
+          <p><b>Видеоролик в кэше</b></p>
+          <p class="b-top"><b>Проигрывание ролика без лагов</b></p>
+          <ul>
+            <li>Progress нормально работает в FF и Opera</li>
+            <li>Для Chrome и IE9 ускоренное проигрывание ролика</li>
+          </ul>
+        </section>
+        <section>
+          <h1>вопросы?</h1>
+        </section>
+      </div>
 
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.min.js"></script>
+    </div>
 
-        <script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
 
-            // Full list of configuration options available here:
-            // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                controls: true,
-                progress: true,
-                history: true,
-                center: true,
+    <script>
 
-                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-                transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        width: 1350,
+        height: 800,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
 
-                // Optional libraries used to extend on reveal.js
-                dependencies: [
-                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-                ]
-            });
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
 
-        </script>
+    </script>
 
-    </body>
-    </html>
+  </body>
+  </html>

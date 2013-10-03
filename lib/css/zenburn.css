@@ -6,9 +6,10 @@ based on dark.css by Ivan Sagalaev
 */
 
 pre code {
+  font-size: 50px;
   display: block; padding: 0.5em;
   background: #3F3F3F;
-  color: #DCDCDC;
+  color: #ffffff;
 }
 
 pre .keyword,
@@ -26,7 +27,7 @@ pre .clojure .attribute {
 pre .django .template_tag,
 pre .django .variable,
 pre .django .filter .argument {
-  color: #DCDCDC;
+  color: #ffffff;
 }
 
 pre .number,
@@ -38,7 +39,7 @@ pre .dos .envvar,
 pre .dos .stream,
 pre .variable,
 pre .apache .sqbracket {
-  color: #EFDCBC;
+  color: #fde910;
 }
 
 pre .dos .flow,
